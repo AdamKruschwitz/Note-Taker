@@ -12,8 +12,8 @@
 ## Description
 A website for creating, viewing, and deleting notes. Built as a homework for the UC Berkley coding bootcamp. For this assignment, we were given the front end code for this website and were required to create a backend using Express.js.
 
-## See the deployed site [here](#).
-![A demo gif of the site](#)
+## See the deployed site [here](https://glacial-reaches-80381.herokuapp.com).
+![A demo gif of the site](./demo.gif)
 
 ## Installation instructions
 clone down the repository and run ```npm install```
