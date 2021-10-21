@@ -1,6 +1,8 @@
 const api = require('express').Router();;
 const fs = require('fs');
 
+const uuid = require('uuid');
+
 // Error handling cb
 const err = (er) => {
     er ? console.log("process failed: ", er) : console.log("process finished");
@@ -17,7 +19,7 @@ function readFile(filename, cb) {
 
 // File writing helper function
 function writeFile(filename, data) {
-    fs.writeFile(filename, JSON.stringify(data), err);
+    fs.writeFile(filename, JSON.stringify(data, null, '\t'), err);
 }
 
 api.get('/notes', (req, res) => {
@@ -27,9 +29,12 @@ api.get('/notes', (req, res) => {
 // POST request for creating a new note
 api.post('/notes', (req, res) => {
     readFile('./db/db.json', data => {
-        // TODO: add unique ID.
-        // console.log(req.body);
-        data.push(req.body);
+        let note = {
+            title: req.body.name,
+            text: req.body.text,
+            id: uuid.v1()
+        }
+        data.push(note);
         writeFile('./db/db.json', data);
         res.send("Note saved successfully");
     });

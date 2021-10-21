@@ -1,1 +1,17 @@
-[{"title":"Test Title","text":"Test text"},{"name":"Greg what the HELL??","text":"Greg doesn't think big chungus is funny"}]
+[
+	{
+		"title": "Toes R 2 dry",
+		"text": "rub feet w/ lotion",
+		"id": "88a95b10-329c-11ec-834c-c506a6084a1e"
+	},
+	{
+		"title": "Fingies R 2 dry",
+		"text": "rub hands w/ lotion",
+		"id": "d9f93e40-329c-11ec-89da-15d9be531134"
+	},
+	{
+		"title": "Party Friday",
+		"text": "At Tubin's house",
+		"id": "15334aa0-329d-11ec-9e1a-a3e39580c990"
+	}
+]
