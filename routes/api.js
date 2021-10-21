@@ -30,10 +30,11 @@ api.get('/notes', (req, res) => {
 api.post('/notes', (req, res) => {
     readFile('./db/db.json', data => {
         let note = {
-            title: req.body.name,
+            title: req.body.title,
             text: req.body.text,
             id: uuid.v1()
         }
+        
         data.push(note);
         writeFile('./db/db.json', data);
         res.send("Note saved successfully");
