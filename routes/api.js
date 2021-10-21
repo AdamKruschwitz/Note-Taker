@@ -40,6 +40,12 @@ api.post('/notes', (req, res) => {
     });
 });
 
-
+api.delete('/notes/:note_id', (req, res) => {
+    readFile('./db/db.json', data => {
+        data = data.filter(el => el.id !== req.params.note_id);
+        writeFile('./db/db.json', data);
+        res.send("Note deleted successfully");
+    });
+});
 
 module.exports = api;
